@@ -106,9 +106,9 @@ class SignedAlphabets(Dataset):
         count = 0
         for i in tqdm(self.labels):
             save_example = 1
-            example_pth = os.path.join("Sign Language for Alphabets\example", str(i))
+            example_pth = os.path.join("Sign Language for Alphabets - SYC\example", str(i))
             
-            if os.path.exists("Sign Language for Alphabets\example") is True and count == 0:
+            if os.path.exists("Sign Language for Alphabets - SYC\example") is True and count == 0:
                 flag = input("example already exist, would you like to build a new example? [Y/N]")
                 if flag == "Y" or flag == "y":
                     shutil.rmtree(example_pth)
@@ -118,7 +118,7 @@ class SignedAlphabets(Dataset):
                 else:
                     exit()
             elif count == 0:
-                os.mkdir("Sign Language for Alphabets\example")
+                os.mkdir("Sign Language for Alphabets - SYC\example")
             pth = os.path.join(self.pth, str(i))
             sample_info =  os.listdir(pth)
 
